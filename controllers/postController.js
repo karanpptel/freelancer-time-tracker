@@ -2,6 +2,7 @@ import Project from "../models/projectModel.js";
 import User from "../models/userModel.js";
 
 export const createPost = async(req,res) => {
+    //  console.log("req.userId:", req.userId);    should show user id
     const {title, content, status} = req.body;
 
     if(!title || !content ){
@@ -42,7 +43,7 @@ export const getUserPost = async(req,res) => {
         if(!userPost){
             return res.status(404).json({message: "Post not found"});
         }
-        console.log(userPost);
+        // console.log(userPost);
 
         res.status(200).json(userPost);
         
