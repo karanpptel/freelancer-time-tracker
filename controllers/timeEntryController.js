@@ -56,7 +56,7 @@ export const getTimeEntries = async (req, res) => {
 export const getSummaryByProject = async (req, res) => {
   try {
     // console.log('req.userId:', req.userId)
-    //const timeEntries = await TimeEntry.find({ user: req.userId })
+   
     //console.log('TimeEntries:', timeEntries)
 
     const summary = await TimeEntry.aggregate([
@@ -111,7 +111,7 @@ export const getSummaryByProject = async (req, res) => {
                     timezone: 'Asia/Kolkata'
                   }
                 }
-              }
+              } 
             }
           }
         }

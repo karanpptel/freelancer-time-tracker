@@ -60,7 +60,7 @@ export const updatePost = async(req,res) => {
     const postId = req.params.id;
     try {
         const post = await Project.findById(postId);
-        console.log(post);
+        //   console.log(post);
 
         if(!post){
             return res.status(404).json({message: "Post not found"});
@@ -74,7 +74,7 @@ export const updatePost = async(req,res) => {
                 status: status,
             },
         );
-        console.log(updatePost);
+       // console.log(updatePost);
 
         res.status(200).json({message: "Post updated successfully"});
         
@@ -88,7 +88,7 @@ export const updatePost = async(req,res) => {
 export const deletePost = async(req,res) => {
     try {
         const postId = req.params.id;
-        console.log(`Trying to delete post: ${postId}`);
+        //console.log(`Trying to delete post: ${postId}`);
 
         const deletedPost = await Project.findByIdAndDelete(postId);
 
@@ -96,7 +96,7 @@ export const deletePost = async(req,res) => {
             return res.status(404).json({message: "Post not found or cannot be deleted"});
         }
 
-        console.log(`successfully deleted post: ${deletedPost.title}`);
+        //console.log(`successfully deleted post: ${deletedPost.title}`);
         
         res.status(200).json({message: "Post deleted successfully"});
 
